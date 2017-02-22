@@ -2,6 +2,9 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+//Heroku
+const port = process.env.PORT || 3000;
+
 var app = express();
 
 
@@ -59,6 +62,6 @@ app.get('/bad', (request, response) => {
 });
 
 //Bind app to a Port
-app.listen(3000, () => {
-  console.log('Server Is Live On Port 3000');
+app.listen(port, () => {
+  console.log(`Server Is Live On Port ${port}`);
 });
